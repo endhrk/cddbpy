@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while IFS='|' read num title vocal disc year genre
+do
+	echo eyeD3 -a \"$vocal\" -A \"$disc\" -t \"$title\" -G \"$genre\" -Y \"$year\" --set-encoding=utf8 \"/home/endo/Music/cd/Unknown Album/$num.mp3\"
+	eyeD3 -a "$vocal" -A "$disc" -t "$title" -G "$genre" -Y "$year" --set-encoding=utf8 "/home/endo/Music/cd/Unknown Album/$num.mp3"
+done < id3.csv
